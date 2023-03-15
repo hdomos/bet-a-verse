@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -13,10 +13,14 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::firstOrCreate([
-            'id' => 1,
-            'name' => 'Admin',
-            'is_admin' => true,
-        ]);
+        if (User::query()->count() == 0) {
+            User::create([
+                'id' => 1,
+                'name' => 'Admin',
+                'email' => 'hdomos@gmail.com',
+                'password' => Hash::make('Password1234'),
+                'is_admin' => true,
+            ]);
+        }
     }
 }
