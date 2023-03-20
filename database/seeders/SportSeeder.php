@@ -8,10 +8,10 @@ use Illuminate\Database\Seeder;
 class SportSeeder extends Seeder
 {
     public array $sports = [
-        'Football',
-        'Basketball',
-        'Handball',
-        'Volleyball',
+        ['Football', 'fa-solid fa-futbol'],
+        ['Basketball', 'fa-solid fa-basketball'],
+        ['Handball', 'fa-solid fa-circle'],
+        ['Volleyball', 'fa-solid fa-volleyball'],
     ];
 
     /**
@@ -22,7 +22,8 @@ class SportSeeder extends Seeder
         if (Sport::count() == null) {
             foreach ($this->sports as $sport) {
                 Sport::create([
-                    'name' => $sport,
+                    'name' => $sport[0],
+                    'icon' => $sport[1],
                 ]);
             }
         }

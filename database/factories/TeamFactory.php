@@ -20,7 +20,7 @@ class TeamFactory extends Factory
 
         return [
             'name' => $name,
-            'logo_url' => $this->faker->imageUrl(category: $name),
+            'logo_url' => $this->faker->image(dir: 'public/storage/teams', fullPath: false, category: $name),
         ];
     }
 }

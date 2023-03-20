@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignIdFor(User::class)->nullable()->constrained();
+            $table->string('name')->nullable();
             $table->string('email')->nullable();
 
             $table->foreignIdFor(Game::class)->constrained();

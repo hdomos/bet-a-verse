@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Team;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreGameRequest;
+use App\Http\Requests\UpdateGameRequest;
+use App\Models\Game;
 
-class TeamController extends Controller
+class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +28,7 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreGameRequest $request)
     {
         //
     }
@@ -34,7 +36,7 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Team $team)
+    public function show(Game $game)
     {
         //
     }
@@ -42,7 +44,7 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Team $team)
+    public function edit(Game $game)
     {
         //
     }
@@ -50,7 +52,7 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Team $team)
+    public function update(UpdateGameRequest $request, Game $game)
     {
         //
     }
@@ -58,7 +60,7 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Team $team)
+    public function destroy(Game $game)
     {
         //
     }

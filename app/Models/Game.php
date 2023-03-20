@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,6 +15,21 @@ class Game extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function scopeActive(Builder $builder)
+    {
+        $builder->where('is_active', '=', true);
+    }
+
+    public function scopeWithTeams(Builder $builder)
+    {
+        $builder->with('teams');
+    }
+
+    public function scopeFinished(Builder $builder)
+    {
+        $builder->where('is_finished', '=', true);
+    }
 
     /**
      * @return BelongsToMany<Team>
