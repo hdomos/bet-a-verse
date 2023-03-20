@@ -1,8 +1,8 @@
-<div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <h1 class="text-4xl font-bold leading-7 text-slate-900 dark:text-white">@lang('Welcome to bet-a-verse!')</h1>
+<div class="px-4 py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <h2 class="py-4 text-4xl font-bold lg:py-8 text-slate-900 dark:text-white">@lang('Welcome to bet-a-verse!')</h2>
 
     <div class="py-6">
-        <x-input class="w-1/2 px-6 py-4 text-xl form-input" type="search" wire:model="search" placeholder="{{ __('Search for teams, games...') }}" />
+        <x-input class="w-full px-6 py-4 text-xl lg:w-1/2 form-input" type="search" wire:model="search" placeholder="{{ __('Search for teams, games...') }}" />
     </div>
     @foreach ($sports as $sport)
     <section>
@@ -11,7 +11,7 @@
         <div>
             {{-- <h3>@lang('Current games')</h3> --}}
 
-            <div class="grid grid-cols-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 @foreach ($sport->activeGames as $game)
                     <a href="/game/{{ $game->id }}"  @class([
                         'group relative flex flex-col flex-initial justify-items-between items-strech h-40 m-3 transition-all border-2 rounded-md', 'hover:ring-4',
@@ -31,7 +31,7 @@
                         <div class="absolute inset-0 hidden bg-white bg-opacity-75 pointer-events-none dark:bg-opacity-25 group-hover:block">
                         </div>
                         <p class="absolute hidden text-xl text-teal-900 -translate-x-1/2 -translate-y-1/2 opacity-100 top-1/2 left-1/2 dark:text-white group-hover:block">
-                            @lang('Show game details')
+                            @lang('Show game')
                         </p>
                     </a>
                 @endforeach

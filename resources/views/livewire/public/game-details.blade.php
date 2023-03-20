@@ -1,6 +1,6 @@
 <div class="px-4 py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="content-center justify-between py-4 md:flex lg:py-8">
-        <h1 class="text-4xl font-bold text-slate-900 dark:text-white">{{ $game->name }}</h1>
+        <h2 class="text-4xl font-bold text-slate-900 dark:text-white">{{ $game->name }}</h2>
 
         <x-sport.card :sport="$game->sport" :position-right="true" />
     </div>
